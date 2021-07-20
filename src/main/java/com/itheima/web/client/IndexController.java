@@ -57,7 +57,6 @@ public class IndexController {
     @GetMapping(value = "/article/{id}")
     public String getArticleById(@PathVariable("id") Integer id, HttpServletRequest request){
         Article article = articleServiceImpl.selectArticleWithId(id);
-        logger.info("123");
         if(article!=null){
             // 查询封装评论相关数据
             getArticleComments(request, article);
